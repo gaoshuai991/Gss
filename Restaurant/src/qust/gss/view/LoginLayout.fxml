@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="424.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qust.gss.view.LoginLayoutController">
+   <children>
+      <ImageView fitHeight="424.0" fitWidth="750.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@background.png" />
+         </image></ImageView>
+      <AnchorPane layoutX="347.0" layoutY="104.0" opacity="0.75" prefHeight="242.0" prefWidth="340.0" style="-fx-background-color: rgb(255,255,255); -fx-background-radius: 15;">
+         <children>
+            <TextField fx:id="userName" layoutX="158.0" layoutY="84.0" promptText="用户名" />
+            <RadioButton fx:id="user" layoutX="159.0" layoutY="38.0" mnemonicParsing="false" text="员工" textFill="#2153c9" />
+            <RadioButton fx:id="admin" layoutX="240.0" layoutY="38.0" mnemonicParsing="false" text="管理员" textFill="#2153c9" />
+            <Button fx:id="submit" layoutX="159.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleSubmitBtn" prefHeight="23.0" prefWidth="57.0" style="-fx-background-color: rgb(23,124,191);" text="登 录" textFill="#fcfcfc" />
+            <Button layoutX="240.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleExitBtn" prefHeight="23.0" prefWidth="57.0" style="-fx-background-color: rgb(23,124,191);" text="退 出" textFill="WHITE" />
+            <ImageView fitHeight="74.0" fitWidth="80.0" layoutX="21.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="119.0" opacity="0.7" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <PasswordField fx:id="userPwd" layoutX="158.0" layoutY="130.0" promptText="密码" />
+         </children></AnchorPane>
+      <Label layoutX="37.0" layoutY="303.0" text="餐厅点餐系统" textFill="#337cda">
+         <font>
+            <Font name="STXingkai" size="34.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

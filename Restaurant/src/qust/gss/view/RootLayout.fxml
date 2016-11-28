@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qust.gss.view.RootLayoutController">
+   <children>
+      <BorderPane prefHeight="550.0" prefWidth="850.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <SplitPane dividerPositions="0.22950819672131148" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane maxWidth="330.0" minHeight="0.0" minWidth="230.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5824175824175825" layoutX="60.0" layoutY="154.0" orientation="VERTICAL" prefHeight="548.0" prefWidth="279.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <BorderPane prefHeight="285.0" prefWidth="277.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <center>
+                                          <TableView fx:id="boughtTable" pickOnBounds="false" prefHeight="238.0" prefWidth="243.0" BorderPane.alignment="CENTER">
+                                            <columns>
+                                              <TableColumn fx:id="boughtNameCol" maxWidth="1000.0" minWidth="100.0" prefWidth="102.0" text="名称" />
+                                              <TableColumn fx:id="boughtPriceCol" maxWidth="55.0" minWidth="35.0" prefWidth="47.0" text="单价" />
+                                                <TableColumn fx:id="boughtCountCol" maxWidth="60.0" minWidth="35.0" prefWidth="48.0" text="数量" />
+                                                <TableColumn fx:id="boughtTotalCol" maxWidth="60.0" minWidth="35.0" prefWidth="48.0" text="总价" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </center>
+                                       <bottom>
+                                          <AnchorPane prefHeight="12.0" prefWidth="277.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Label contentDisplay="CENTER" text="合计：" wrapText="true" AnchorPane.leftAnchor="5.0">
+                                                   <font>
+                                                      <Font name="Microsoft YaHei Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="sumPrice" text="0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0">
+                                                   <font>
+                                                      <Font name="Microsoft YaHei" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </bottom>
+                                       <top>
+                                          <Label text="已选食品" BorderPane.alignment="CENTER">
+                                             <font>
+                                                <Font name="Microsoft YaHei Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </top>
+                                    </BorderPane>
+                                 </children></AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="284.0" prefWidth="277.0">
+                                 <children>
+                                    <Button fx:id="decreaseBtn" mnemonicParsing="false" onAction="#handleDecreaseBtn" text="减 少" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="25.0">
+                                       <font>
+                                          <Font name="Microsoft YaHei" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="increaseBtn" mnemonicParsing="false" onAction="#handleIncreaseBtn" text="增 加" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="25.0">
+                                       <font>
+                                          <Font name="Microsoft YaHei" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="delBtn" mnemonicParsing="false" onAction="#handleDelBtn" text="删 除" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="80.0">
+                                       <font>
+                                          <Font name="Microsoft YaHei" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="payBtn" mnemonicParsing="false" onAction="#handlePayBtn" text="结 账" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="130.0">
+                                       <font>
+                                          <Font name="Microsoft YaHei" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="clearBtn" layoutX="143.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleClearBtn" text="清 空" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0">
+                                       <font>
+                                          <Font name="Microsoft YaHei" size="14.0" />
+                                       </font>
+                                    </Button>
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="548.0" prefWidth="479.0">
+                     <children>
+                        <BorderPane prefHeight="548.0" prefWidth="626.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <SplitPane dividerPositions="0.5160523186682521" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                <items>
+                                    <TabPane prefHeight="499.0" prefWidth="183.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab text="主 食">
+                                             <content>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="stapleTable" onMouseExited="#handleStapleMouseExits" prefHeight="534.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="stapleIdTableCol" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="编号" />
+                                                          <TableColumn fx:id="stapleNameTableCol" maxWidth="300.0" minWidth="100.0" prefWidth="150.0" text="食品名称" />
+                                                            <TableColumn fx:id="staplePriceTableCol" maxWidth="100.0" minWidth="40.0" prefWidth="60.0" text="单价" />
+                                                            <TableColumn fx:id="stapleCountTableCol" maxWidth="100.0" minWidth="50.0" prefWidth="70.0" text="当前可售数量" />
+                                                            <TableColumn fx:id="stapleBtnTableCol" maxWidth="100.0" minWidth="50.0" prefWidth="75.0" text="购买" />
+                                                        </columns>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <columnResizePolicy>
+                                                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                         </columnResizePolicy>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                        </Tab>
+                                        <Tab text="素 菜">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="vegetablesTable" onMouseExited="#handleVegetablesMouseExits" prefHeight="534.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <columnResizePolicy>
+                                                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                         </columnResizePolicy>
+                                                         <columns>
+                                                            <TableColumn fx:id="vegetablesIdTableCol" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="编号" />
+                                                            <TableColumn fx:id="vegetablesNameTableCol" maxWidth="280.0" minWidth="60.0" prefWidth="150.0" text="食品名称" />
+                                                            <TableColumn fx:id="vegetablesPriceTableCol" maxWidth="100.0" minWidth="40.0" prefWidth="60.0" text="单价" />
+                                                            <TableColumn fx:id="vegetablesCountTableCol" maxWidth="100.0" minWidth="65.0" prefWidth="70.0" text="当前可售数量" />
+                                                            <TableColumn fx:id="vegetablesBtnTableCol" maxWidth="80.0" minWidth="50.0" prefWidth="75.0" text="购买" />
+                                                         </columns>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </TableView>
+                                                   </children></AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab text="荤 菜">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="meatTable" onMouseExited="#handleMeatMouseExits" prefHeight="534.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <columnResizePolicy>
+                                                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                         </columnResizePolicy>
+                                                         <columns>
+                                                            <TableColumn fx:id="meatIdTableCol" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="编号" />
+                                                            <TableColumn fx:id="meatNameTableCol" maxWidth="170.0" minWidth="100.0" prefWidth="150.0" text="食品名称" />
+                                                            <TableColumn fx:id="meatPriceTableCol" maxWidth="100.0" minWidth="40.0" prefWidth="60.0" text="单价" />
+                                                            <TableColumn fx:id="meatCountTableCol" maxWidth="100.0" minWidth="50.0" prefWidth="70.0" text="当前可售数量" />
+                                                            <TableColumn fx:id="meatBtnTableCol" maxWidth="100.0" minWidth="50.0" prefWidth="75.0" text="购买" />
+                                                         </columns>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </TableView>
+                                                   </children></AnchorPane>
+                                            </content>
+                                          </Tab>
+                                          <Tab text="汤 粥">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="gruelTable" onMouseExited="#handleGruelMouseExits" prefHeight="534.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <columnResizePolicy>
+                                                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                         </columnResizePolicy>
+                                                         <columns>
+                                                            <TableColumn fx:id="gruelIdTableCol" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="编号" />
+                                                            <TableColumn fx:id="gruelNameTableCol" maxWidth="170.0" minWidth="100.0" prefWidth="150.0" text="食品名称" />
+                                                            <TableColumn fx:id="gruelPriceTableCol" maxWidth="100.0" minWidth="40.0" prefWidth="60.0" text="单价" />
+                                                            <TableColumn fx:id="gruelCountTableCol" maxWidth="100.0" minWidth="50.0" prefWidth="70.0" text="当前可售数量" />
+                                                            <TableColumn fx:id="gruelBtnTableCol" maxWidth="100.0" minWidth="50.0" prefWidth="75.0" text="购买" />
+                                                         </columns>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </TableView>
+                                                   </children></AnchorPane>
+                                            </content>
+                                          </Tab>
+                                      </tabs>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TabPane>
+                                  <AnchorPane maxWidth="500.0" minHeight="0.0" minWidth="350.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <BorderPane prefHeight="463.0" prefWidth="186.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <top>
+                                                <Label text="可 选 套 餐" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font name="Microsoft YaHei Bold" size="16.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets bottom="3.0" left="4.0" right="4.0" top="4.0" />
+                                                   </padding>
+                                                </Label>
+                                             </top>
+                                             <center>
+                                                <TableView fx:id="comboTable" prefHeight="422.0" prefWidth="186.0" BorderPane.alignment="CENTER">
+                                                  <columns>
+                                                    <TableColumn fx:id="comboCidCol" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="编号" />
+                                                    <TableColumn fx:id="comboNameCol" maxWidth="250.0" minWidth="170.0" prefWidth="175.0" text="类型" />
+                                                      <TableColumn fx:id="comboPriceCol" maxWidth="100.0" minWidth="45.0" prefWidth="75.0" text="价格" />
+                                                      <TableColumn fx:id="comboChoiceCol" maxWidth="100.0" minWidth="50.0" prefWidth="70.0" text="选择" />
+                                                  </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </center>
+                                          </BorderPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </center>
+                        </BorderPane>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="36.0" prefWidth="850.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" layoutX="88.0" layoutY="-28.0" spacing="10.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="5.0">
+                     <children>
+                        <Label text="当前用户：" textFill="#285f86">
+                           <font>
+                              <Font name="Microsoft YaHei" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userName" layoutX="10.0" layoutY="10.0" text="Label">
+                           <font>
+                              <Font name="Microsoft JhengHei" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#handleUpdatePwdBtn" style="-fx-background-color: rgb(200,220,245);" text="修改密码" />
+                        <Button mnemonicParsing="false" onAction="#handleExitBtn" text="注销">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin></Button>
+                     </children>
+                  </HBox>
+                  <Label layoutX="44.0" layoutY="11.0" text="欢迎使用点餐系统" textFill="#1c6186" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="3.0">
+                     <font>
+                        <Font name="STXingkai" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="35.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="3.0">
+                     <image>
+                        <Image url="@bing.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

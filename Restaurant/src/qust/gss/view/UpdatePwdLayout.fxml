@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="281.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qust.gss.view.UpdatePwdLayoutController">
+   <children>
+      <Label layoutX="54.0" layoutY="49.0" text="旧密码：">
+         <font>
+            <Font name="Microsoft YaHei" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="98.0" text="新密码：">
+         <font>
+            <Font name="Microsoft YaHei" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="147.0" prefHeight="22.0" prefWidth="83.0" text="确认密码：">
+         <font>
+            <Font name="Microsoft YaHei" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="194.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleExitBtn" text="取 消" />
+      <Button layoutX="97.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleSubmitBtn" text="确 认" />
+      <PasswordField fx:id="newPwd" layoutX="129.0" layoutY="98.0" />
+      <PasswordField fx:id="confirmPwd" layoutX="129.0" layoutY="147.0" />
+      <PasswordField fx:id="oldPwd" layoutX="129.0" layoutY="49.0" />
+   </children>
+</AnchorPane>
