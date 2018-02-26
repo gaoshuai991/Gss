@@ -1,2 +1,2 @@
-# Author: Gss
-This is a Order System for restaurant programmed By JavaFX.
+# 餐厅点餐系统
+大三课程设计。JavaFX + mysql
